@@ -1,0 +1,67 @@
+version: "3.8"
+
+services:
+  php:
+    image: moodle/php:1.0
+    container_name: phpmoodle
+    working_dir: /var/www/html
+    volumes:
+        - ./php-fpm/var/log/php-fpm:/var/log/php-fpm
+        - ./var/www/html:/var/www/html
+        - ./php-fpm/php.ini-development:/usr/local/etc/php/php.ini-development
+        - ./php-fpm/php.ini-production:/usr/local/etc/php/php.ini-production
+        - ./php-fpm/www.conf:/usr/local/etc/php-fpm.d/www.conf
+    
+    restart: unless-stopped
+    
+    networks:
+      - moodle
+
+  sql:
+    image: mysql/mysql-server:8.0.27
+    container_name: mysqlmoodle
+    volumes:
+        - ./mysql/my.cnf:/etc/my.cnf
+        - ./mysql/mysql_data:/var/lib/mysql
+        
+    environment:
+        MYSQL_ROOT_PASSWORD: 147258369
+        MYSQL_DATABASE: moodle
+        MYSQL_USER: moodle
+        MYSQL_PASSWORD: 147258369
+    restart: unless-stopped
+       
+    networks:
+      - moodle
+
+  nginx:
+    image: nginx:latest
+    container_name: nginxmoodle
+    working_dir: /var/www/html
+    volumes:
+        - ./var/www/html:/var/www/html
+        - ./nginx/conf.d:/etc/nginx/conf.d
+        - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+     - 80:80
+     - 443:443
+     
+    restart: unless-stopped
+    
+    networks:
+      - moodle
+
+  redis:
+    image: redis:latest
+    container_name: redismoodle
+
+    restart: unless-stopped
+
+    networks:
+      - moodle
+
+networks:
+  moodle:
+    name: moodle-network
+    driver: bridge
+
