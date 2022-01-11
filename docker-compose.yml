@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   php:
-    image: moodle/php:1.0
+          image: zakery1369/moodle:v1
     container_name: phpmoodle
     working_dir: /var/www/html
     volumes:
