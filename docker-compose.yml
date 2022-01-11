@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   php:
-          image: zakery1369/moodle:v1
+    image: zakery1369/moodle:v1
     container_name: phpmoodle
     working_dir: /var/www/html
     volumes:
@@ -64,4 +64,3 @@ networks:
   moodle:
     name: moodle-network
     driver: bridge
-
