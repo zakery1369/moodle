@@ -1,5 +1,7 @@
 # Moodle
 
+![Moodle Docker](https://miro.medium.com/max/700/1*OGJsQYR5fFb6Tw0k-N7MVw.png)
+
 - ## How to use this image:
 
 1. Download the image from dockerhub
