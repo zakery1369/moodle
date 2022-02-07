@@ -71,6 +71,7 @@ Add your customized configurations in these files :
 /php-fpm/php.ini-development
 /php-fpm/php.ini-production
 /php-fpm/www.conf
+/php-fpm/uploads.ini
 ```
 
 - ## Exposing external port
