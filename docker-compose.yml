@@ -18,7 +18,7 @@ services:
     networks:
       - moodle
 
-  sql:
+  mysql:
     image: mysql/mysql-server:8.0.27
     container_name: mysqlmoodle
     volumes:
