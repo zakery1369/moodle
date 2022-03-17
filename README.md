@@ -25,7 +25,7 @@ docker-compose up -d
 ```
 7. In the Database settings, adjust the following :
 ```
-Database host = sql
+Database host = mysql
 Database name = moodle
 Database user = moodle
 Database password = 147258369
