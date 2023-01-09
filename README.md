@@ -1,6 +1,6 @@
 # Moodle
 
-![Moodle Docker](https://miro.medium.com/max/700/1*OGJsQYR5fFb6Tw0k-N7MVw.png)
+![Moodle Docker](https://raw.githubusercontent.com/zakery1369/pics/master/Moodle.png)
 
 - ## How to use this image:
 
