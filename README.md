@@ -12,7 +12,7 @@ docker pull zakery1369/moodle:[tag]
 3. Download moodle.tar.gz from [Moodle Downloads](https://download.moodle.org/)
 4. Extract moodle-xx.tar.gz to the following directory:
 ```
-/var/www/html/moodle
+moodle-master/var/www/html/moodle
 ```
 5. Run the command below :
 ```
@@ -41,21 +41,21 @@ Unix socket = it's blank
 in the files downloaded from this [GitHub Page](https://github.com/zakery1369/moodle/)
 1. In this directory, uncomment the lines in the ``moodle.conf`` and replace your domain with **example.com**
 ```
-/nginx/conf.d/moodle.conf
+moodle-master/nginx/conf.d/moodle.conf
 ```
 2. Following the guides from [Letsencrypt](https://letsencrypt.org/getting-started/) (certbot), copy the privkey.pem and fullchain.pem to the following directory. (Remember that from the previous step, the cert files names should correspond with these config file) :
 ```
-/nginx/conf.d/certs
+moodle-master/nginx/conf.d/certs
 ```
 3. In case you want to configure your Nginx, you can find the config file in the following directory :
 ```
-/nginx/nginx.conf
+moodle-master/nginx/nginx.conf
 ```
 
 - ## Change mysql configurations
 1. Customize your configs in the following file :
 ```
-/mysql/my.cnf
+moodle-master/mysql/my.cnf
 ```
 2. Change the mysql environment variables in the docker-compose.yml file :
 ```
@@ -68,10 +68,10 @@ environment:
 - ## Change php-fpm configurations
 Add your customized configurations in these files :
 ```
-/php-fpm/php.ini-development
-/php-fpm/php.ini-production
-/php-fpm/www.conf
-/php-fpm/php.ini
+moodle-master/php-fpm/php.ini-development
+moodle-master/php-fpm/php.ini-production
+moodle-master/php-fpm/www.conf
+moodle-master/php-fpm/php.ini
 ```
 
 - ## Exposing external port
