@@ -10,7 +10,10 @@ docker pull zakery1369/moodle:[tag]
 ```
 2. Clone or download all files from  [GitHub Page](https://github.com/zakery1369/moodle/)
 3. Download moodle.tar.gz from [Moodle Downloads](https://download.moodle.org/)
-4. Extract moodle-xx.tar.gz to your favorite directory.
+4. Extract moodle-xx.tar.gz to the following directory.
+```
+moodle-master/var/www/html/moodle
+```
 5. Run the command below :
 ```
 docker-compose up -d
